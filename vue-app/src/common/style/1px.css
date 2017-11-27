@@ -1,0 +1,44 @@
+@import './mixins/setOnepx';
+
+.newb-1px, .newb-1px-t, .newb-1px-b, .newb-1px-tb, .newb-1px-l, .newb-1px-r {
+  position: relative;
+}
+
+.newb-1px {
+  &::before {
+    @mixin setLine red;
+  }
+}
+
+.newb-1px-t {
+  &::before {
+    @mixin setTopLine '#ccc';
+  }
+}
+
+.newb-1px-b {
+  &::after {
+    @mixin setBottomLine #ccc;
+  }
+}
+
+.newb-1px-tb {
+  &::before {
+    @mixin setTopLine #ccc;
+  }
+  &::after {
+    @mixin setBottomLine #ccc;
+  }
+}
+
+.newb-1px-l {
+  &::before {
+    @mixin setLeftLine red;
+  }
+}
+
+.newb-1px-r {
+  &::after {
+    @mixin setRightLine red;
+  }
+}

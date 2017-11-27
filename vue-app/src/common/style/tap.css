@@ -1,0 +1,7 @@
+.newb-tap-active {
+  tap-highlight-color: rgba(0,0,0,0);
+  user-select:none;
+}
+.newb-tap-active:active {
+  background-color: #ECECEC;
+}

@@ -1,0 +1,29 @@
+/**
+*global
+*/
+
+/** 
+*   Header
+*/
+$header-background-color: #fff;
+$header-title-color: #000;
+$header-text-color: #ccc;
+$header-arrow-color: #ccc;
+
+/**
+*   Button
+*/
+$button-default-color: #fff;
+$button-default-background-color: #48bed4;
+$button-default-plain-color: #999;
+$button-primary-color: #48bed4;
+$button-primary-background-color: #fff;
+$button-danger-color: #fff;
+$button-danger-background-color: #ef4f4f;
+
+/* 
+  Cell
+*/
+$cell-background-color: #fff;
+$cell-value-color: #888;
+$cell-arrow-color: #ccc;
