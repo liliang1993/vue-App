@@ -121,10 +121,11 @@
 
 <script>
   import getParentProp from 'common/js/get-parent-prop';
+  import Base from 'common/js/base'
   export default{
     name:'nb-input',
     created () {
-      this.currentValue = (this.value === undefined || this.value === null) ? '' this.value;
+      this.currentValue = (this.value === undefined || this.value === null) ? '' :this.value;
     },
     minxins:[Base],
     components: {
@@ -166,7 +167,7 @@
       placeholderAlign: String,
       labelWidth: String
     },
-    computed(){
+    computed:{
       labelStyles () {
         return {
           width: this.labelWidthComputed ||this.$parent.labelWidth,
@@ -210,9 +211,21 @@
       onKeyUp ($event) {
         if($event.key == 'Enter') {
           $event.target/blur();
-          this.$emit('on-enter', this.current, $event);
+          this.$emit('on-enter', this.currentValue, $event);
         }
+      },
+    },
+    data () {
+       let data = {
+         currentValue: ''
+       }
+       return data
+    },
+    watch: {
+      value (val) {
+        this.currentValue = val
       }
     }
+
   }
 </script>

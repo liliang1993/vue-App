@@ -7,6 +7,9 @@
         <div style='flex:1;text-align:right;'>好的</div>
       </nb-cell>
     </nb-group>
+    <nb-group>
+        <nb-input></nb-input>
+    </nb-group>  
     <keep-alive>
       </router-view><router-view/>
     </keep-alive>
@@ -14,14 +17,15 @@
 </template>
 
 <script>
-  import { nbButton, nbCell, nbGroup } from './base';
+  import { nbButton, nbCell, nbGroup,nbInput } from './base';
 
   export default {
     name: 'app',
     components: {
       nbButton,
       nbCell,
-      nbGroup
+      nbGroup,
+      nbInput
     }
   };
 </script>
