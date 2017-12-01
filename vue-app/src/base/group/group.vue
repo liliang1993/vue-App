@@ -23,9 +23,11 @@ export default {
 <style lang="css">
   @component-namespace newb {
     @component cells {
-      width: 100%;
-      padding-left:20px;
-      padding-right:20px;
+      width: auto;
+      position: relative;
+      margin-left:20px;
+      margin-right:20px;
+      margin-bottom:20px;
     }
   }
 </style>

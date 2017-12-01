@@ -1,3 +1,37 @@
+/*
+  这里是默认不变的组件图标 例如取消按钮
+*/
+@font-face {
+  font-family: 'nb-default-icon';
+  src: url('../fonts/default/iconfont.eot');
+  src: url('../fonts/default/iconfont.eot?#iefix') format('embedded-opentype'), url('../fonts/default/iconfont.woff') format('woff'), url('../fonts/default/iconfont.ttf') format('truetype'), url('../fonts/default/iconfont.svg#iconfont') format('svg');
+}
+[class^="newb-icon-default"],
+[class*=" newb-icon-default"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  display:inline-block;
+  font-family: 'nb-default-icon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.newb-icon-default-clear{
+  font-size:14px;
+  color:#ccc;
+}
+.newb-icon-default-clear:before {
+  content: '\e60f';
+}
+.newb-icon{
+  padding-left:10px;
+}
+
 @font-face {
   font-family: 'nb-icon';
   src: url('../fonts/nb-icon.eot');
@@ -20,3 +54,15 @@
 .icon-arrow:before {
   content: '\e626';
 }
+
+
+
+
+
+
+
+
+
+
+
+

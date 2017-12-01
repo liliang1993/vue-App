@@ -1,7 +1,7 @@
 <template>
   <div class='newb-cell'>
-    <div class='newb-cell--hd'>
-      <slot name='label'>
+    <div class='newb-cell--hd newb-1px-r' :style="{width: labelWidth || $parent.labelWidth || labelWidthComputed, textAlign: $parent.labelAlign, marginRight: $parent.labelMarginRight}">
+      <slot name='label' >
         <span class="newb-cell-text" v-text='title' ></span>
         <span v-if='label' class="newb-cell-label" v-text="label"></span>
       </slot>  
@@ -30,7 +30,7 @@
         <input
         :id="`vux-x-input-${uuid}`"
         v-if="type === 'number'"
-        class="weui-input"
+        class="newb-input"
         :maxlength="max"
         :autocomplete="autocomplete"
         :autocapitalize="autocapitalize"
@@ -51,7 +51,7 @@
         <input
         :id="`vux-x-input-${uuid}`"
         v-if="type === 'email'"
-        class="weui-input"
+        class="newb-input"
         :maxlength="max"
         :autocomplete="autocomplete"
         :autocapitalize="autocapitalize"
@@ -72,7 +72,7 @@
         <input
         :id="`vux-x-input-${uuid}`"
         v-if="type === 'password'"
-        class="weui-input"
+        class="newb-input"
         :maxlength="max"
         :autocomplete="autocomplete"
         :autocapitalize="autocapitalize"
@@ -93,7 +93,7 @@
         <input
         :id="`vux-x-input-${uuid}`"
         v-if="type === 'tel'"
-        class="weui-input"
+        class="newb-input"
         :maxlength="max"
         :autocomplete="autocomplete"
         :autocapitalize="autocapitalize"
@@ -113,7 +113,7 @@
         ref="input"/>
     </div>
     <div class='newb-cell--ft'>
-        <i class='newui-icon newui-icon-clear'></i>
+        <i class='newb-icon newb-icon-default-clear' v-show="showClear && currentValue && !readonly && !disabled" @click="clear" ></i>
          <slot name="right"></slot>
     </div>
   </div>
@@ -142,6 +142,7 @@
       },
       placeholder: String,
       value: [String , Number],
+      label:String,
       name: String,
       readonly:String,
       disabled: Boolean,
@@ -162,6 +163,11 @@
       autocorrect: {
       type: String,
       default: 'off'
+      },
+      //拼写检查
+      spellcheck: {
+      type: String,
+      default: 'false'
       },
       iconType: String,
       placeholderAlign: String,
@@ -194,6 +200,7 @@
     methods: {
       clear () {
         this.currentValue = '';
+        console.log('current', this.currentValue)
         this.focus();
       },
       focus () {
@@ -204,6 +211,9 @@
       },
       onfocus ($event) {
         this.$emit('on-focus' , this.currentValue , $event);
+      },
+      focusHandler ($event) {
+      this.$emit('on-focus', this.currentValue, $event)
       },
       onBlur ($event) {
          this.$emit('on-focus' , this.currentValue , $event);
@@ -229,3 +239,19 @@
 
   }
 </script>
+<style lang='css'>
+  @import "../../common/style/icons.css";
+  @component-namespace newb {
+    @component input {
+    width: 100%;
+    border: 0;
+    outline: 0;
+    -webkit-appearance: none;
+    background-color: transparent;
+    font-size: inherit;
+    color: inherit;
+    height: 1.41176471em;
+    line-height: 1.41176471;
+    }
+  }
+</style>

@@ -1,10 +1,10 @@
 <template>
   <div
-    class='newb-cell newb-1px'
+    class='newb-cell'
     :class="{
       'newb-tap-active': isLink || !!Link
     }"
-    @click = 'onclick'
+    @click = 'onClick'
     >
     <div calss='newb-cell--left'>
       <slot name='left'>
@@ -128,6 +128,8 @@
       align-items: center;
       display: flex;
       padding: 10px 15px;
+      border:1px solid red;
+      position: relative;
       @descendent primary {
         flex: 1;
       }
@@ -154,7 +156,6 @@
             border-style: solid;
             -webkit-transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0);
             transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0);
-            position: relative;
             top: -2px;
             position: absolute;
             top: 50%;

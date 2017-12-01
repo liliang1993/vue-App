@@ -2,6 +2,11 @@
 *global
 */
 
+
+/**
+* icon
+*/
+
 /** 
 *   Header
 */
@@ -27,3 +32,7 @@ $button-danger-background-color: #ef4f4f;
 $cell-background-color: #fff;
 $cell-value-color: #888;
 $cell-arrow-color: #ccc;
+
+/*
+input
+*/

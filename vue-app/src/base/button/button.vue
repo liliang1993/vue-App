@@ -6,7 +6,7 @@
       'is-disabled': disabled,
       'is-plain': plain
     }]"
-    :style='style'
+    :style='btnStyle'
     @click="handleClick"
     :disabled="disabled">
     <span class="newb-button-icon" v-if="icon || $slots.icon">
@@ -47,9 +47,9 @@
       disabled: Boolean,
       nativeType: String,
       plain: Boolean,
-      style: {
+      btnStyle: {
         type: Object,
-        default: {},
+        default: function(){return {} },
         validator(value) {
           return value instanceof Object;
         }
